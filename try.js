@@ -159,16 +159,6 @@
 // console.log(slugify("Amy mg mg"));
 
 
-
-
-
-
-
-
-
-
-
-
 // function checkForSpam(message) {
 //   let result;
 //   // Change code below this line
@@ -185,23 +175,50 @@
 //   console.log(book.author);
 //   // Рейтинг
 //   console.log(book.rating);
-function multiply(firstNumber, secondNumber, ...otherArgs) {
-  console.log(firstNumber); // Значение первого аргумента
-  console.log(secondNumber); // Значение второго аргумента
-  console.log(otherArgs); // Массив остальных аргументов
+
+const countries = [
+  "Ukraine",
+  "Poland",
+  "Croatia",
+  "Montenegro",
+  "France",
+  "USA",
+];
+
+const countriesPrice = [100, 200, 300, 400, 500, 600];
+
+const loginRegistr = prompt('reg лог');
+const passwordRegistr = prompt('reg пароль');
+let login;
+let password;
+const loginization = () => {
+  do {
+ login = prompt('ввести лог');
+password = prompt('ввести пароль');
+  }while(login !== loginRegistr &&password!==passwordRegistr) 
+
+   return  console.log('успіх!!')
 }
+console.log(loginization());
 
-multiply(1, 2);
-multiply(1, 2, 3);
-multiply(1, 2, 3, 4);
-const first = { propA: 5, propB: 10, propC: 50 };
-const second = { propC: 15 };
+const sum = prompt('Скільки грошей потратиш?');
 
-const third = { propB: 20, ...first, ...second };
-console.log(third); // { propA: 5, propB: 10, propC: 15 }
+let indexCountry;
+let total;
+let allCountries = [];
+let balance;
+let trueIndex;
+for (let i = 100; i <= sum; i += 100) {
 
-const fourth = { ...first, ...second, propB: 20 };
-console.log(fourth); // { propA: 5, propB: 20, propC: 15 }
+  total = countriesPrice.indexOf(i);
+    allCountries.push(countries[total])
 
-const fifth = { ...first, propB: 20, ...second };
-console.log(fifth); // { propA: 5, propB: 20, propC: 15 }
+}
+// console.log(sum);
+const chooseCountry = prompt(`Виберіть країну:${allCountries}`);
+
+let indexPrice = allCountries.indexOf(chooseCountry);
+console.log(countriesPrice[indexPrice]);
+let x = countriesPrice[indexPrice];
+balance = sum-x;
+console.log(`Тур оплачено!!balance:${balance}`);
