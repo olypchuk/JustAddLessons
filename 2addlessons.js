@@ -45,7 +45,7 @@ password = prompt('ввести пароль');
 
    return  console.log('успіх!!')
 }
-console.log(loginization());
+loginization();
 
 const sum = prompt('Скільки грошей потратиш?');
 
@@ -64,7 +64,7 @@ for (let i = 100; i <= sum; i += 100) {
 const chooseCountry = prompt(`Виберіть країну:${allCountries}`);
 
 let indexPrice = allCountries.indexOf(chooseCountry);
-console.log(countriesPrice[indexPrice]);
+// console.log(countriesPrice[indexPrice]);
 let x = countriesPrice[indexPrice];
 balance = sum-x;
 console.log(`Тур оплачено!!balance:${balance}`);
