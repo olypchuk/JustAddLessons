@@ -757,3 +757,16 @@ const users =[
 
  
 
+const bookShelf = {
+  books: ["The last kingdom", "Haze", "The guardian of dreams"],
+  updateBook(oldName, newName) {
+  
+   
+    const oldNameIndex =this.books.indexOf(oldName);
+    const newBooks = this.books.splice(oldNameIndex, 1, newName);
+  
+
+    return this.books
+    
+  }, 
+};
