@@ -524,6 +524,17 @@
 // console.log(atTheOldToad.removePotion("Dragon breath"))
 
 
+// const atTheOldToad = {
+//   potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//   updatePotionName(oldName, newName) {
+//     // Change code below this line
+   
+//       this.potions.splice(this.potions.indexOf(oldName), 1, newName);
+//       return this.potions
+
+//     // Change code above this line
+//   },
+// };
 
 
 
@@ -581,16 +592,15 @@ const atTheOldToad = {
     return this.potions;
   },
   addPotion(newPotion) {
-    let x=[]
-    for (const name of this.potions) {
-      x.push(name.name);
-      
+    let arr=[]
+      for (const { name } of this.potions) {
+      arr.push(name);
+     
      } 
-    let y = Object.values(newPotion);
-    let potion = y[0];
-  
-    if (x.includes(potion)) {
-         return `Error! Potion ${potion} is already in your inventory!`;
+      const newIndex = Object.values(newPotion)[0];
+
+    if (arr.includes(newIndex)) {
+         return `Error! Potion ${newIndex} is already in your inventory!`;
       }
 
     this.potions.push(newPotion);
@@ -598,9 +608,9 @@ return this.potions
   },
   removePotion(potionName) {
     let array =[]
-    for (const name of this.potions) {
+      for (const { name } of this.potions) {
      
-      array.push(name.name)
+      array.push(name)
     } 
  
 let index =array.indexOf(potionName)
@@ -613,7 +623,7 @@ let index =array.indexOf(potionName)
   },
   updatePotionName(oldName, newName) {
   
-    for (const name of this.potions) {
+      for (const name  of this.potions) {
      
       if (name.name === oldName) {
         name.name=newName
@@ -624,6 +634,5 @@ let index =array.indexOf(potionName)
   },
   // Change code above this line
 };
-
-console.log(atTheOldToad.updatePotionName("Stone skin", "Invulnerability potion"));
+console.log(atTheOldToad.updatePotionName("Dragon breath", "Polymorth"));
 
